@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:XamarinSample"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core" 
+            x:Class="XamarinSample.TabbedPage1"
+            BarTextColor="Chocolate"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            >
+
+    <ContentPage Title="Template">
+        <StackLayout>
+            <Label Text="Coucou"/>
+            <Button Text="Super Bouton" />
+        </StackLayout>
+    </ContentPage>
+    <local:ContactListView Title="Contacts"/>
+    <local:MainPage Title="Main Page"/>
+    <local:PokedexListView Title="Pokedex"/>
+</TabbedPage>

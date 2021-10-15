@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinSample.PokemonProfil"
+             xmlns:extention="clr-namespace:XamarinSample.Extentions">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Button Text="Fermer" BackgroundColor="White" TextColor="Red" Command="{Binding CloseCommand}"/>
+
+                <Label Text="{Binding Name}" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Header"/>
+                <Image Source="{Binding Front_Default}" 
+                       WidthRequest="250"></Image>
+
+                <Image Source="{Binding Back_default}" 
+                       WidthRequest="250"></Image>
+                
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Nom" Margin="100,10,0,0" FontSize="16" Grid.Row="0" Grid.Column="0" TextColor="White"></Label>
+                    <Label Text="{Binding Name}"  Margin="0,10,0,0" FontSize="16" Grid.Row="0" Grid.Column="1" TextColor="White"></Label>
+                    <Label Text="Poids" Margin="100,10,0,0" FontSize="16" Grid.Row="1" Grid.Column="0" TextColor="White"></Label>
+                    <Label Text="{Binding Weight}" Margin="0,10,0,0" FontSize="16" Grid.Row="1" Grid.Column="1" TextColor="White"></Label>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

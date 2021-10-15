@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinSample.MainPage"
+             xmlns:extention="clr-namespace:XamarinSample.Extentions">
+
+    <ScrollView>
+        <StackLayout>
+
+            <RelativeLayout>
+                <BoxView x:Name="bv" BackgroundColor="Firebrick"
+                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3}"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=50}">
+                </BoxView>
+                <Image Source="{extention:EmbeddedImage Ressource=XamarinSample.Images.image.png}" 
+                       WidthRequest="100"
+                       Aspect="AspectFit"
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=bv, Property=Width, Factor=0.4, Constant=-25}"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=bv, Property=Height, Factor=0.5, Constant=50}"/>
+            </RelativeLayout>
+
+            <Label FontSize="Large" Text="Hello" BackgroundColor="BlueViolet"/>
+            <Button BorderWidth="4" HeightRequest="100" Text="Mon beau boutton"/>
+            <DatePicker></DatePicker>
+            <Entry Keyboard="Email"></Entry>
+            <Entry Keyboard="Url"></Entry>
+            <Picker>
+                <Picker.Items>
+                    <x:String>1 item</x:String>
+                    <x:String>2 item</x:String>
+                    <x:String>3 item</x:String>
+                </Picker.Items>
+            </Picker>
+            <Slider x:Name="Slider" Minimum="0" Maximum="10" Value="5"/>
+            <Label Text="{Binding Source={x:Reference Slider}, Path=Value}"></Label>
+            <Grid BackgroundColor="CadetBlue">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Text="Label" FontSize="16" Grid.Row="1" Grid.Column="1" BackgroundColor="Coral"></Label>
+                <Button Clicked="Button_Clicked" Grid.ColumnSpan="2" Text="Bouton"></Button>
+            </Grid>
+            <Image Source="{extention:EmbeddedImage Ressource=XamarinSample.Images.image.png}"></Image>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

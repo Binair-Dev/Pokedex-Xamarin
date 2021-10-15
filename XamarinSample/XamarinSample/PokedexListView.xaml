@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinSample.PokedexListView"
+             BackgroundColor="Brown"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Liste des Pokemons" FontSize="22" FontAttributes="Bold" BackgroundColor="CadetBlue" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <ListView ItemsSource="{Binding PokemonListe}" SelectedItem="{Binding SelectedContact}" x:Name="Liste" ItemSelected="ResetSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding name}" FontSize="Title" />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Margin="0,0,0,10" Text="Précédent" Grid.Row="0" Grid.Column="0" Command="{Binding PreviousCommand}"/>
+                <Button Margin="0,0,0,10" Text="Suivant" Grid.Row="0" Grid.Column="1" Command="{Binding NextCommand}"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
